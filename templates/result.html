@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Suggested Gifts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Suggested Gifts</h1>
+    <ul>
+    {% if gifts %}
+        {% for gift in gifts %}
+            <li>{{ gift['name'] }} - ₹{{ gift['price'] }}</li>
+        {% endfor %}
+    {% else %}
+        <li>No gifts found matching your criteria.</li>
+    {% endif %}
+    </ul>
+   
+    <a href="/" class="button">Search again</a>
+</body>
+</html>
